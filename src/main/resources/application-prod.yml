@@ -1,0 +1,85 @@
+server:
+  port: 8091
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/kitchen
+    username: postgres
+    password: moti2022
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    open-in-view: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+logging:
+  file:
+    path: ./logs
+    name: ./logs/moti.log
+
+
+jwt:
+  secret:
+    key: 1a0a2b98-abc2-4d30-ab52-bac25590518a
+  expiry:
+    date: 36000000000000
+
+file:
+  uploadDir: ./reports
+
+payme:
+  url: https://checkout.paycom.uz/
+  merchantId: 63493ea6cef7c50fdbde1d47
+
+click:
+  serviceId: 25150
+  merchantId: 17345
+  secretKey: T74VOV0h8b
+  merchantUserId: 28351
+
+
+sms:
+  api:
+    email: motipanasiankitchen@gmail.com
+    password: nxlSLjUAQye2TRtmahabfRYqbOEWiTG2QDlX3LdI
+    url: https://notify.eskiz.uz/api/
+    limit-sms-code: 5
+    limit-sms-code-duration-hour: 1
+
+bot:
+  log:
+    token: 5565186121:AAFRs7poCIz69f0GD1ysPyrLJ131aZevpIY
+    username: https://t.me/RequestGetBotMotiBot
+    groupId: -855848587
+    admin: 1142292943
+  order:
+    token: 5720320933:AAE406E7Jqxqr2ilfi3n43vlD-0pBASKVzA
+    username: https://t.me/MotiPanasianBuyurtmaBot
+    groupId: -1001849762689
+
+firebase:
+  bucket:
+    name: kitchen-moon-light.appspot.com
+  image:
+    url: https://firebasestorage.googleapis.com/v0/b/${firebase.bucket.name}/o/%s?alt=media
+  project:
+    id: moon-light-kitchen
+
+api:
+  info:
+    title: KitchenMoonLight
+    description: Backend project that handles api for serving online orders and delivery of the restaurant.
+    version: 1.0
+    termOfService: https://github.com/behzod/kitchen-moon-light.git
+    contact-name: Pheonix team
+    contact-email: https://github.com/behzod/kitchen-moon-light.git
+    contact-url: https://github.com/behzod/kitchen-moon-light.gitt
+    license-name: Apache 2.0
+    license-url: https://www.apache.org/licenses/LICENSE-2.0.html
+
+springfox:
+  documentation:
+    swagger-ui:
+      base-url: /api/v1
+    swagger.v2.path: /api/v1/doc/v1
